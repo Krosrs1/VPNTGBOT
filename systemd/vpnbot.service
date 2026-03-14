@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram VPN Bot (aiogram + Marzban)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/vpnbot
+EnvironmentFile=/opt/vpnbot/.env
+ExecStart=/opt/vpnbot/.venv/bin/python /opt/vpnbot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
